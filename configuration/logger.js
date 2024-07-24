@@ -5,7 +5,7 @@ import winston from "winston";
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.json(),
-  defaultMeta: { service: "aml-server-api" },
+  defaultMeta: { service: "oct-server-api" },
   transports: [
     new winston.transports.File({ filename: "./logs/error.log", level: "error" }),
     new winston.transports.File({ filename: "./logs/combined.log" }),

@@ -1,10 +1,10 @@
 import mysql from 'mysql2';
 
 const config = {
-  host: 'frwahxxknm9kwy6c.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-  user: 'iudm3bbfn5ppoikf',
-  password: 'fshw1e999frqyv0a',
-  database: 'b4jsnb2mhq17shf2',
+  host: 'octdb.cf0wq2me40rb.ca-central-1.rds.amazonaws.com',
+  user: 'admin',
+  password: 'audrey-masengu',
+  database: 'oct',
   port: 3306
 };
 
