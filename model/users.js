@@ -79,6 +79,8 @@ class Users {
     });
   }
 
+
+
   static async comparePassword(storedPassword, candidatePassword) {
     try {
       return await bcrypt.compare(candidatePassword, storedPassword);
@@ -86,6 +88,24 @@ class Users {
       console.error("Error comparing passwords:", error);
       throw error;
     }
+  }
+
+  static getUserByUsername(username) {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        "SELECT * FROM users WHERE username=?",
+        [username],
+        (error, results, fields) => {
+          if (error) {
+            console.error("Error executing query:", error);
+            reject(error);
+          } else {
+            console.log("Query results:", results);
+            resolve(results[0]);
+          }
+        }
+      );
+    });
   }
 }
 

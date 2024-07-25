@@ -14,55 +14,6 @@ Remplacez `<PORT>` par le port sur lequel votre serveur écoute (défini dans `.
 
 ## Routes et Méthodes
 
-### TypeEmployes
-
-- **GET /typeEmployes**
-
-  - Description: Récupère tous les types d'employés.
-  - Réponse: `200 OK` avec un tableau d'objets représentant les types d'employés.
-
-- **GET /typeEmployes/:id**
-
-  - Description: Récupère un type d'employé par ID.
-  - Paramètres URL: `id` (numérique)
-  - Réponse: `200 OK` avec un objet représentant le type d'employé.
-
-- **POST /typeEmployes**
-
-  - Description: Ajoute un nouveau type d'employé.
-  - Corps de la requête:
-    ```json
-    {
-      "nom": "string",
-      "description": "string"
-    }
-    ```
-  - Réponse: `201 Created` avec l'ID du nouveau type d'employé.
-
-- **PUT /typeEmployes/:id**
-
-  - Description: Met à jour les informations d'un type d'employé.
-  - Paramètres URL: `id` (numérique)
-  - Corps de la requête:
-    ```json
-    {
-      "nom": "string",
-      "description": "string"
-    }
-    ```
-  - Réponse: `200 OK` avec un message de succès.
-
-- **DELETE /typeEmployes/:id**
-
-  - Description: Supprime un type d'employé.
-  - Paramètres URL: `id` (numérique)
-  - Réponse: `200 OK` avec un message de succès.
-
-- **GET /typeEmployes/:typeId/employes**
-  - Description: Récupère les employés avec un type spécifique.
-  - Paramètres URL: `typeId` (numérique)
-  - Réponse: `200 OK` avec un tableau d'objets représentant les employés.
-
 ### Users
 
 - **GET /users**

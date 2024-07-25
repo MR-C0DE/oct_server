@@ -6,5 +6,6 @@ const routerLogin = Router();
 
 // Récupérer toutes les notes internes
 routerLogin.get("/", LoginController.connect);
+routerLogin.post("/", LoginValide.connectUser(), LoginController.connexion);
 
 export default routerLogin;
