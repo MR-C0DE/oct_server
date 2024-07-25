@@ -38,3 +38,4 @@ class Protection {
 }
 
 export default Protection;
+
