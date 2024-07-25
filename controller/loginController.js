@@ -48,7 +48,6 @@ class LoginController {
       }
 
       delete userResponse.password;
-      console.log("User Data:", userResponse);
       
       const token = AuthUtils.generateToken(userResponse);
       response.status(200).json({ token });
