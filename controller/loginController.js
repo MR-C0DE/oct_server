@@ -48,7 +48,7 @@ class LoginController {
       }
 
       delete userResponse.password;
-      
+      // token
       const token = AuthUtils.generateToken(userResponse);
       response.status(200).json({ token });
     } catch (error) {
