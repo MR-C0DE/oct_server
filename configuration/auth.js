@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 class AuthUtils {
   static generateToken(user) {
     const payload = {
-      ...user
+      ... user
     };
     const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "10h" });
     return token;

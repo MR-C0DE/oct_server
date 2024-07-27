@@ -8,7 +8,7 @@ CREATE TABLE roles (
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     role_id INT,
-    username VARCHAR(50) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
     firstname VARCHAR(50),
     lastname VARCHAR(50),
     telephone VARCHAR(20),
@@ -16,6 +16,7 @@ CREATE TABLE users (
     password VARCHAR(100),
     FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE SET NULL
 );
+
 
 CREATE TABLE words_of_the_day (
     id INT AUTO_INCREMENT PRIMARY KEY,
