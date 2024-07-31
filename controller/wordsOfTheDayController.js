@@ -79,7 +79,7 @@ class WordsOfTheDayController {
     }
   }
 
-  static async getWordOfTheDayById(request, response) {
+  static async getWordsOfTheDayById(request, response) {
     const errorValide = Validation.valide(request, response);
 
     if (errorValide) {
@@ -87,7 +87,7 @@ class WordsOfTheDayController {
     }
     const { id } = request.params;
     try {
-      const word = await WordsOfTheDay.getWordOfTheDayById(id);
+      const word = await WordsOfTheDay.getWordsOfTheDayById(id);
       response.status(200).json(word);
     } catch (error) {
       console.error(error);
@@ -95,21 +95,7 @@ class WordsOfTheDayController {
     }
   }
 
-  static async getWordsOfTheDayByUser(request, response) {
-    const errorValide = Validation.valide(request, response);
 
-    if (errorValide) {
-      return;
-    }
-    const { userId } = request.params;
-    try {
-      const wordsByUser = await WordsOfTheDay.getWordsOfTheDayByUser(userId);
-      response.status(200).json(wordsByUser);
-    } catch (error) {
-      console.error(error);
-      response.status(500).send("Error getting words of the day by user.");
-    }
-  }
 }
 
 export { WordsOfTheDayController };

@@ -8,7 +8,7 @@ const routerWordsOfTheDay = Router();
 routerWordsOfTheDay.get("/", WordsOfTheDayController.getWordsOfTheDay);
 
 // Récupérer un mot du jour par ID
-routerWordsOfTheDay.get("/:id", WordsOfTheDayValide.id("id"), WordsOfTheDayController.getWordOfTheDayById);
+routerWordsOfTheDay.get("/:id", WordsOfTheDayValide.id("id"), WordsOfTheDayController.getWordsOfTheDayById);
 
 // Ajouter un nouveau mot du jour
 routerWordsOfTheDay.post("/", WordsOfTheDayValide.createWordOfTheDay(), WordsOfTheDayController.createWordOfTheDay);
