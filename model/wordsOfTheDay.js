@@ -48,6 +48,7 @@ class WordsOfTheDay {
   }
 
   static deleteWordOfTheDay(id) {
+      
     return new Promise((resolve, reject) => {
       const query = "DELETE FROM words_of_the_day WHERE id = ?";
       connection.query(query, [id], (error, results) => {
@@ -59,6 +60,25 @@ class WordsOfTheDay {
           resolve(results);
         }
       });
+    });
+  }
+    
+  static getWordsOfTheDayById(id) {
+    return new Promise((resolve, reject) => {
+        
+      connection.query(
+        "SELECT * FROM words_of_the_day WHERE id=?",
+        [id],
+        (error, results, fields) => {
+          if (error) {
+            console.error("Error executing query:", error);
+            reject(error);
+          } else {
+            console.log("Query results:", results);
+            resolve(results[0]);
+          }
+        }
+      );
     });
   }
 }
